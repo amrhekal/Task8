@@ -11,9 +11,9 @@ barsBtn.addEventListener("click", () => {
 });
 /////////////////////////////////////////////////////////////////////////////////////
 // slider
-nextBtn = document.querySelector(".next");
-prevBtn = document.querySelector(".prev");
-slides = document.querySelectorAll(".slider-container .slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const slides = document.querySelectorAll(".slider-container .slide");
 let currentIndex = 0;
 
 nextBtn.addEventListener("click", () => {
@@ -45,8 +45,8 @@ prevBtn.addEventListener("click", () => {
 });
 ////////////////////////////////////////////////////////////////////
 //accordion section
-let acc = document.querySelectorAll(".talk .accordion");
-let panel = document.querySelectorAll(".talk .panel");
+const acc = document.querySelectorAll(".talk .accordion");
+const panel = document.querySelectorAll(".talk .panel");
 
 for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
@@ -67,3 +67,18 @@ for (let i = 0; i < acc.length; i++) {
 
     });
 }
+/////////////////////////////////////////////////////////////////
+// Show Arrow Up
+const headerUp = document.querySelector(".header-up");
+headerUp.addEventListener('click', () => {
+    window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+});
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+        headerUp.style.display = "block";
+    } else {
+        headerUp.style.display = "none";
+    }
+
+})
